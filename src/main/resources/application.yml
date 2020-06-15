@@ -1,3 +1,10 @@
 spring:
   profiles:
     active: dev
+
+pagehelper:
+      helperDialect: mysql  //数据库
+      reasonable: true  
+      supportMethodsArguments: true   
+      pageSizeZero: true    
+      params: count=countSql

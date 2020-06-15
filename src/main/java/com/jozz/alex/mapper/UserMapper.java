@@ -1,12 +1,30 @@
 package com.jozz.alex.mapper;
 
 import com.jozz.alex.entity.User;
-
+import com.jozz.alex.entity.UserExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
+    long countByExample(UserExample example);
 
-    List<User> findAll();
-    void add(User user);
+    int deleteByExample(UserExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

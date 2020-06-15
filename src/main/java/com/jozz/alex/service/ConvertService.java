@@ -8,7 +8,10 @@ import com.jozz.alex.util.RedisUtil;
 import javafx.scene.shape.TriangleMesh;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Date;
+
+import javax.sound.midi.Soundbank;
+import java.lang.reflect.WildcardType;
+import java.util.*;
 
 @Service
 public class ConvertService {
@@ -61,5 +64,14 @@ public class ConvertService {
             }
             return record.getUrl();
         }
+    }
+
+    public int rand(){
+        int level = 1;
+        int max = 5;
+        while ((level < max && Math.random() < 0.5d)) {
+            level++;
+        }
+        return level;
     }
 }
